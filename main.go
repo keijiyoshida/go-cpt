@@ -34,5 +34,19 @@ func newScanner(r io.Reader) *scanner {
 
 var sc = newScanner(os.Stdin)
 
+func max(x, y int) int {
+	if x > y {
+		return x
+	}
+	return y
+}
+
+func min(x, y int) int {
+	if x < y {
+		return x
+	}
+	return y
+}
+
 func main() {
 }
