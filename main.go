@@ -2,6 +2,7 @@ package main
 
 import (
 	"bufio"
+	"fmt"
 	"os"
 	"strconv"
 	"strings"
@@ -57,6 +58,8 @@ func (r *bufReader) nextLine() string {
 	return s
 }
 
+var writer = bufio.NewWriter(os.Stdout)
+
 func next() string {
 	return reader.next()
 }
@@ -71,6 +74,10 @@ func nextInt() int {
 
 func nextLine() string {
 	return reader.nextLine()
+}
+
+func out(a ...interface{}) {
+	fmt.Fprintln(writer, a...)
 }
 
 func max(x, y int) int {
@@ -94,4 +101,11 @@ func joinInts(a []int, sep string) string {
 	return strings.Join(b, sep)
 }
 
-func main() {}
+func main() {
+	solve()
+	writer.Flush()
+}
+
+func solve() {
+
+}
