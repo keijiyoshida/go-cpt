@@ -102,7 +102,7 @@ func joinInts(a []int64, sep string) string {
 	return strings.Join(b, sep)
 }
 
-func divup(x, y int64) int64 {
+func divUp(x, y int64) int64 {
 	return (x + y - 1) / y
 }
 
