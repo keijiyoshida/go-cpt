@@ -64,8 +64,8 @@ func next() string {
 	return reader.next()
 }
 
-func nextInt() int {
-	i, err := strconv.Atoi(reader.next())
+func nextInt() int64 {
+	i, err := strconv.ParseInt(reader.next(), 10, 64)
 	if err != nil {
 		panic(err)
 	}
@@ -80,24 +80,24 @@ func out(a ...interface{}) {
 	fmt.Fprintln(writer, a...)
 }
 
-func max(x, y int) int {
+func max(x, y int64) int64 {
 	if x > y {
 		return x
 	}
 	return y
 }
 
-func min(x, y int) int {
+func min(x, y int64) int64 {
 	if x < y {
 		return x
 	}
 	return y
 }
 
-func joinInts(a []int, sep string) string {
+func joinInts(a []int64, sep string) string {
 	b := make([]string, len(a))
 	for i, v := range a {
-		b[i] = strconv.Itoa(v)
+		b[i] = strconv.FormatInt(v, 10)
 	}
 	return strings.Join(b, sep)
 }
