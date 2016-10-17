@@ -64,12 +64,16 @@ func next() string {
 	return reader.next()
 }
 
-func nextInt() int64 {
+func nextInt64() int64 {
 	i, err := strconv.ParseInt(reader.next(), 10, 64)
 	if err != nil {
 		panic(err)
 	}
 	return i
+}
+
+func nextInt() int {
+	return int(nextInt64())
 }
 
 func nextLine() string {
@@ -80,21 +84,29 @@ func out(a ...interface{}) {
 	fmt.Fprintln(writer, a...)
 }
 
-func max(x, y int64) int64 {
+func max64(x, y int64) int64 {
 	if x > y {
 		return x
 	}
 	return y
 }
 
-func min(x, y int64) int64 {
+func min64(x, y int64) int64 {
 	if x < y {
 		return x
 	}
 	return y
 }
 
-func joinInts(a []int64, sep string) string {
+func max(x, y int) int {
+	return int(max64(int64(x), int64(y)))
+}
+
+func min(x, y int) int {
+	return int(min64(int64(x), int64(y)))
+}
+
+func joinInt64s(a []int64, sep string) string {
 	b := make([]string, len(a))
 	for i, v := range a {
 		b[i] = strconv.FormatInt(v, 10)
@@ -102,8 +114,20 @@ func joinInts(a []int64, sep string) string {
 	return strings.Join(b, sep)
 }
 
-func divUp(x, y int64) int64 {
+func joinInts(a []int, sep string) string {
+	b := make([]string, len(a))
+	for i, v := range a {
+		b[i] = strconv.Itoa(v)
+	}
+	return strings.Join(b, sep)
+}
+
+func divUp64(x, y int64) int64 {
 	return (x + y - 1) / y
+}
+
+func divUp(x, y int) int {
+	return int(divUp64(int64(x), int64(y)))
 }
 
 func main() {
