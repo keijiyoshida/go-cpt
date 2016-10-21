@@ -98,12 +98,23 @@ func min64(x, y int64) int64 {
 	return y
 }
 
+func abs64(x int64) int64 {
+	if x < 0 {
+		return -x
+	}
+	return x
+}
+
 func max(x, y int) int {
 	return int(max64(int64(x), int64(y)))
 }
 
 func min(x, y int) int {
 	return int(min64(int64(x), int64(y)))
+}
+
+func abs(x int) int {
+	return int(abs64(int64(x)))
 }
 
 func joinInt64s(a []int64, sep string) string {
