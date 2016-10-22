@@ -180,7 +180,7 @@ func Test_lcm(t *testing.T) {
 	}
 	for _, tc := range testCases {
 		if got := lcm(tc.x, tc.y); got != tc.want {
-			t.Errorf("lcm(%d, %d) = %d; want d%",
+			t.Errorf("lcm(%d, %d) = %d; want %d",
 				tc.x, tc.y, got, tc.want)
 		}
 	}
