@@ -141,6 +141,28 @@ func divUp(x, y int) int {
 	return int(divUp64(int64(x), int64(y)))
 }
 
+func gcd64(x, y int64) int64 {
+	if x < y {
+		x, y = y, x
+	}
+	for y != 0 {
+		x, y = y, x % y
+	}
+	return x
+}
+
+func gcd(x, y int) int {
+	return int(gcd64(int64(x), int64(y)))
+}
+
+func lcm64(x, y int64) int64 {
+	return x*y/gcd64(x, y)
+}
+
+func lcm(x, y int) int {
+	return int(lcm64(int64(x), int64(y)))
+}
+
 func main() {
 	solve()
 	writer.Flush()
