@@ -3,6 +3,7 @@ package main
 import (
 	"bufio"
 	"fmt"
+	"math"
 	"os"
 	"strconv"
 	"strings"
@@ -146,7 +147,7 @@ func gcd64(x, y int64) int64 {
 		x, y = y, x
 	}
 	for y != 0 {
-		x, y = y, x % y
+		x, y = y, x%y
 	}
 	return x
 }
@@ -156,11 +157,19 @@ func gcd(x, y int) int {
 }
 
 func lcm64(x, y int64) int64 {
-	return x*y/gcd64(x, y)
+	return x * y / gcd64(x, y)
 }
 
 func lcm(x, y int) int {
 	return int(lcm64(int64(x), int64(y)))
+}
+
+func pow64(x, y int64) int64 {
+	return int64(math.Pow(float64(x), float64(y)))
+}
+
+func pow(x, y int) int {
+	return int(pow64(int64(x), int64(y)))
 }
 
 func main() {
