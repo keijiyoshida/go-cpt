@@ -3,10 +3,10 @@ package main
 import (
 	"bufio"
 	"fmt"
+	"math"
 	"os"
 	"strconv"
 	"strings"
-	"math"
 )
 
 type bufReader struct {
@@ -147,7 +147,7 @@ func gcd64(x, y int64) int64 {
 		x, y = y, x
 	}
 	for y != 0 {
-		x, y = y, x % y
+		x, y = y, x%y
 	}
 	return x
 }
@@ -157,7 +157,7 @@ func gcd(x, y int) int {
 }
 
 func lcm64(x, y int64) int64 {
-	return x*y/gcd64(x, y)
+	return x * y / gcd64(x, y)
 }
 
 func lcm(x, y int) int {
