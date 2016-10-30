@@ -6,6 +6,7 @@ import (
 	"os"
 	"strconv"
 	"strings"
+	"math"
 )
 
 type bufReader struct {
@@ -161,6 +162,14 @@ func lcm64(x, y int64) int64 {
 
 func lcm(x, y int) int {
 	return int(lcm64(int64(x), int64(y)))
+}
+
+func pow64(x, y int64) int64 {
+	return int64(math.Pow(float64(x), float64(y)))
+}
+
+func pow(x, y int) int {
+	return int(pow64(int64(x), int64(y)))
 }
 
 func main() {

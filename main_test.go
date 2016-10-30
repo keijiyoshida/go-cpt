@@ -185,3 +185,31 @@ func Test_lcm(t *testing.T) {
 		}
 	}
 }
+
+func Test_pow(t *testing.T) {
+	testCases := []struct{
+		x int
+		y int
+		want int
+	}{
+		{1, 0, 1},
+		{1, 1, 1},
+		{1, 2, 1},
+		{2, 0, 1},
+		{2, 1, 2},
+		{2, 2, 4},
+		{2, 3, 8},
+		{2, 10, 1024},
+		{3, 0, 1},
+		{3, 1, 3},
+		{3, 2, 9},
+		{3, 3, 27},
+		{3, 10, 59049},
+	}
+	for _, tc := range testCases {
+		if got := pow(tc.x, tc.y); got != tc.want {
+			t.Errorf("pow(%d, %d) = %d,; want %d",
+				tc.x, tc.y, got, tc.want)
+		}
+	}
+}
