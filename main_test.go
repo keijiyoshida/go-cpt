@@ -3,9 +3,9 @@ package main
 import "testing"
 
 func Test_max(t *testing.T) {
-	testCases := []struct{
-		x int
-		y int
+	testCases := []struct {
+		x    int
+		y    int
 		want int
 	}{
 		{1, 0, 1},
@@ -21,9 +21,9 @@ func Test_max(t *testing.T) {
 }
 
 func Test_min(t *testing.T) {
-	testCases := []struct{
-		x int
-		y int
+	testCases := []struct {
+		x    int
+		y    int
 		want int
 	}{
 		{1, 0, 0},
@@ -39,8 +39,8 @@ func Test_min(t *testing.T) {
 }
 
 func Test_abs(t *testing.T) {
-	testCases := []struct{
-		x int
+	testCases := []struct {
+		x    int
 		want int
 	}{
 		{-1, 1},
@@ -56,9 +56,9 @@ func Test_abs(t *testing.T) {
 }
 
 func Test_joinInt64s(t *testing.T) {
-	testCases := []struct{
-		a []int64
-		sep string
+	testCases := []struct {
+		a    []int64
+		sep  string
 		want string
 	}{
 		{[]int64{}, " ", ""},
@@ -75,9 +75,9 @@ func Test_joinInt64s(t *testing.T) {
 }
 
 func Test_joinInts(t *testing.T) {
-	testCases := []struct{
-		a []int
-		sep string
+	testCases := []struct {
+		a    []int
+		sep  string
 		want string
 	}{
 		{[]int{}, " ", ""},
@@ -94,9 +94,9 @@ func Test_joinInts(t *testing.T) {
 }
 
 func Test_divUp(t *testing.T) {
-	testCases := []struct{
-		x int
-		y int
+	testCases := []struct {
+		x    int
+		y    int
 		want int
 	}{
 		{0, 1, 0},
@@ -125,9 +125,9 @@ func Test_divUp(t *testing.T) {
 }
 
 func Test_gcd(t *testing.T) {
-	testCases := []struct{
-		x int
-		y int
+	testCases := []struct {
+		x    int
+		y    int
 		want int
 	}{
 		{1, 1, 1},
@@ -157,9 +157,9 @@ func Test_gcd(t *testing.T) {
 }
 
 func Test_lcm(t *testing.T) {
-	testCases := []struct{
-		x int
-		y int
+	testCases := []struct {
+		x    int
+		y    int
 		want int
 	}{
 		{1, 1, 1},
@@ -187,9 +187,9 @@ func Test_lcm(t *testing.T) {
 }
 
 func Test_pow(t *testing.T) {
-	testCases := []struct{
-		x int
-		y int
+	testCases := []struct {
+		x    int
+		y    int
 		want int
 	}{
 		{1, 0, 1},
